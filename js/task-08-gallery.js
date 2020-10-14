@@ -1,4 +1,4 @@
-import images from "./js/gallery-items.js";
+import images from "./gallery-items.js";
 // console.log(images);
 // <li class="gallery__item">
 //   <a
