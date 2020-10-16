@@ -1,4 +1,4 @@
-import images from "./gallery-items.js";
+import images from "./js/gallery-items.js";
 // console.log(images);
 // <li class="gallery__item">
 //   <a
@@ -67,13 +67,13 @@ function onOpenModal(evt) {
 
 
    document.addEventListener("keydown", onCloseEsc);
-  //  document.addEventListener("keydown", onScrollingGalleryImages);
+   document.addEventListener("keydown", onScrollingGalleryImages);
 }
 
 //Закрывает модалку при закрытии очищаее src lightbox__image
 function onCloseModal() {
   document.removeEventListener("keydown", onCloseEsc);
-  // document.removeEventListener("keydown", onScrollingGalleryImages);
+  document.removeEventListener("keydown", onScrollingGalleryImages);
   refs.lightbox.classList.remove("is-open");
   onRemoveAttributesBiImage();
 }
@@ -104,29 +104,38 @@ function onCloseEsc(evt) {
 
 
 // const imagesOriginal = images.map((item) => item.original)
- // console.log(imagesOriginal)
+//  console.log(imagesOriginal)
 
-// // Переключение картинок
-// function onScrollingGalleryImages(evt) {
+// Переключение картинок
+function onScrollingGalleryImages(evt) {
   
-//   let imagesArray = [];
-// images.forEach((item) => {
-//   imagesArray.push(item.original);
-//   // console.log(imagesArray)
-// });
-//   let currentIndex = imagesArray.indexOf(refs.bigImage.src);  
-    
-//   // console.log(currentIndex);
-//   const ARROW_LEFT = "ArrowLeft";
-//   const ARROW_RIGHT = "ArrowRight";
-//   if (evt.code === ARROW_LEFT) {
-       
-//    console.log(currentIndex)
-//    }
+  let imagesArray = [];
+images.forEach((item) => {
+  imagesArray.push(item.original);
+  // console.log(imagesArray)
+});
+  let currentIndex = imagesArray.indexOf(refs.bigImage.src);  
+    console.log(refs.bigImage.src)
+  // console.log(currentIndex);
+  const ARROW_LEFT = "ArrowLeft";
+  const ARROW_RIGHT = "ArrowRight";
+  if (evt.code === ARROW_LEFT) {
+    if (currentIndex > 0) {
+      refs.bigImage.src = imagesArray[currentIndex - 1]
+    } else if (currentIndex <= 0) {
+      currentIndex = imagesArray.length
+      refs.bigImage.src = imagesArray[currentIndex - 1]
+    }
+     console.log(currentIndex)
+   }
 
-//   if (evt.code === ARROW_RIGHT) {
-   
-//        console.log(currentIndex)
-//     }
-//   }
+  if (evt.code === ARROW_RIGHT) {
+       if (currentIndex < imagesArray.length - 1) {
+     refs.bigImage.src = imagesArray[currentIndex + 1]
+     } else currentIndex = -1 
+     refs.bigImage.src = imagesArray[currentIndex + 1]
+    console.log(currentIndex)
+}
+    
+  }
 
