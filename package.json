@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/an-dia/goit-js-hw-08-gallery/issues"
   },
-  "homepage": "https://github.com/an-dia/goit-js-hw-08-gallery#readme",
+  "homepage": "https://github.com/an-dia/goit-js-hw-08-gallery",
   "dependencies": {
     "express": "^4.17.1",
     "joi": "^17.2.1",
