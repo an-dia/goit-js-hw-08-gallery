@@ -1,4 +1,3 @@
-import "./css/styles.css";
 import images from "./js/gallery-items.js";
 // console.log(images);
 // <li class="gallery__item">
