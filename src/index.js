@@ -1,5 +1,5 @@
-import images from "../js/gallery-items.js";
-import 'css/main.css';
+import images from "./js/gallery-items.js";
+import './css/main.css';
 // console.log(images);
 // <li class="gallery__item">
 //   <a
